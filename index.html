@@ -28,6 +28,8 @@
                     li.appendChild(document.createTextNode(data.title+": "+data.message));
                     ul.appendChild(li);
 					document.getElementById("regId").value = data.message ;
+					alert(data.title);
+					alert(data.message);
                 });
             }
         </script>
@@ -40,6 +42,7 @@
             </ul>
            
            <input name="regId" id="regId"> 
+           <button>ready</button>
         </div>
         <script type="text/javascript" src="phonegap.js"></script>
     </body>

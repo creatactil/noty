@@ -27,6 +27,7 @@
                     var li = document.createElement("li");
                     li.appendChild(document.createTextNode(data.title+": "+data.message));
                     ul.appendChild(li);
+					document.getElementById("regId").value = data.message ;
                 });
             }
         </script>
@@ -37,8 +38,8 @@
             <p id="idDispositivo"></p>
             <ul id="notificacionesPush">
             </ul>
-            
-            <button onClick="deviceReady()">Ready</button>
+           
+           <input name="regId" id="regId"> 
         </div>
         <script type="text/javascript" src="phonegap.js"></script>
     </body>

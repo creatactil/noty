@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <title>Tutorial Push</title>
+        <script>
+            document.addEventListener("deviceready", deviceReady, false);
+            function deviceReady() {
+                var push = PushNotification.init({
+                    android: {
+                        senderID: "109603757979"
+                    },
+                    ios: {
+                        alert: "true",
+                        badge: "true",
+                        sound: "true"
+                    }
+                });
+                                                 
+                push.on('registration', function(data) {
+                    document.getElementById("idDispositivo").innerHTML = data.registrationId;
+                });
+                push.on('notification', function(data) {
+                    var ul = document.getElementById("notificacionesPush");
+                    var li = document.createElement("li");
+                    li.appendChild(document.createTextNode(data.title+": "+data.message));
+                    ul.appendChild(li);
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <div class="app">
+            <h1>Tutorial Push</h1>
+            <p id="idDispositivo"></p>
+            <ul id="notificacionesPush">
+            </ul>
+        </div>
+        <script type="text/javascript" src="../cordova.js"></script>
+    </body>
+</html>

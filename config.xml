@@ -49,7 +49,7 @@
   
      <!-- Plugins -->
 		
-		<plugin name="phonegap-plugin-push" spec="1.9.0">
+		<plugin name="phonegap-plugin-push" spec="1.6.0">
     		<param name="SENDER_ID" value="109603757979" />
 		</plugin>
 		
